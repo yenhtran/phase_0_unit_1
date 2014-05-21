@@ -10,4 +10,4 @@
 * Which parts of the challenge did you enjoy?
 * Which parts of the challenge did you find tedious?
 
-<!-- Add your reflection here. Remove the comment markers -->
+I really enjoyed this exercise and think UI/UX could be a good fit for me and the wireframe exercise was fun. Design Thinking is not new to me having worked at Berkeley where we offer Design Thinking courses to our students. I’ve also had an opportunity to visit d.School and partaken in a design thinking workshop. In the exercise, I think what I enjoyed was taking an existing concept and suggest ideas that could make the experience better. I also was introduced to Mockingbird Wireframe application and really had fun using it. The challenge I feel tedious most is still the use of CSS. I think it’s because there are too many options. I’m a simple girl. :)
