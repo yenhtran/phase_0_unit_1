@@ -3,10 +3,10 @@ Define the following commands and describe how they work/what they do.
 
 
 #### add
-Does not add new files to respository, but brings new files to Git's attention to include in it's 'snapshots' of repository.
+Does not add new files to respository, but brings new files to Git's attention to include in it's 'snapshots' of repository. 
 
 #### branch
-Command allows you to build a new branch from perhaps an existing project. 
+Command allows you to build a new branch from perhaps an existing project.  
 
 #### checkout
 A navigational command that lets you "check out" a respository that you are not currently inside. (i.e git checkout master - allows you to checkout the master branch. git checkout cats- checkout another branch.)
@@ -43,7 +43,7 @@ Command to check the status of the resposity. Allows you to see what has been co
 
 ## Release 4: Git Workflow
 
-- Push files to a remote repository
+- Push files to a remote repository- test, test, test
 - Fetch changes
 - Commit locally
 
