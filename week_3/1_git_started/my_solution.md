@@ -61,13 +61,17 @@ Command to check the status of the resposity. Allows you to see what has been co
 	- In your new directory, create a new repository: 'git init'
 	- Save your project in your new directory.
 	- Check for changes in your repository: 'git status'
-	- Add what you want to commit: 'git add file.name'
+	- Add what you want to commit: 'git add .'
 	- (Optional) Check your status 'git status'
 	- Commit project: 'git commit -m "ADD COMMENT"'
 
 ## Release 5: Errors you encountered
 1. Error
+	I had so many errors and unfortunately didn't keep track of them. 
 2. Solution
+	Read the error reports and backtrack steps in case you missed them.
 3. Cause (explain the error)
+	Didn't follow the git workflow properly.
 
 ## Release 6: Reflection
+I have to say, I thought I had a solid understanding of git and github when I started Phase 0, but CLEARLY I DID NOT. I struggled with the idea of Forking, Fetching, and I think my git/github respositories are a mess and maybe I will get a chance to clean it up later, but for now I think I have a better understanding of it all. This cheatsheet will definitely help.
