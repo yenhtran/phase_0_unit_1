@@ -44,8 +44,27 @@ Command to check the status of the resposity. Allows you to see what has been co
 ## Release 4: Git Workflow
 
 - Push files to a remote repository- test, test, test
+	-For first commit to new project: 'git remote add origin https://github.com/yenhtran/filename.git'
+	-Send: 'git push origin master'
+	-For non-first commits to project: 'git push'
+
 - Fetch changes
+	-'git fetch upstream'
+	- (Type Password)
+	- MERGE:'git merge upstream/master'
+	PUSH TO YOUR GITHUB REPO
+	-'git commit -m "ADD COMMENT"
+	-'git push origin master'
+	- (Type Password)
+
 - Commit locally
+	-In your new directory, create a new repository- 'git init'
+	-Work on your project...
+	-Save your project in your new directory.
+	-Check for changes in your repository: 'git status'
+	-Add what you want to commit: 'git add file.name'
+	-(Optional) Check your status 'git status'
+	-Commit project: 'git commit -m "ADD COMMENT"'
 
 ## Release 5: Errors you encountered
 1. Error
