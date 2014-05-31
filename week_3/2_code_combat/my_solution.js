@@ -5,6 +5,8 @@ I worked on this challenge by myself
 // Note: to make commenting easier, you can highlight the section you want to comment and hold 
 // command + / This will comment the line. 
  
+//RELEASE 1 & 2
+
 // RESCUE MISSION
 // move down x2
 // move right 1x
@@ -180,6 +182,18 @@ this.attackXY(69, 56);
 this.attackXY(57, 48);
 this.attackXY(50, 68);
 this.attackXY(48, 49);
- 
-// Reflection:
-// Write your reflection here.
+
+//RELEASE 3:
+//What is 'this' referring to? Think programming-wise rather than in the terms of the game.
+	//Methods following 'this' object determines the scope the function applies to.
+//What does the () do in JavaScript?
+	//Calls a function
+//What is the point of the semicolons?
+	//End a statement.
+
+// REFLECT:
+// I had a great time playing the game. I liked how
+// the game required me to break down the steps and 
+// forced me not to jump to quickly, otherwise I 
+// missed a step and had to go back and edit my 
+// code to complete the challenge.
