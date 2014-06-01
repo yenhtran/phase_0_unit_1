@@ -1,0 +1,608 @@
+Javascript Notes
+
+1) Numbers
+-all numbers in JS are floating-point numbers even if not written with decimal
+-if you want to divide two integers and get an integer result, use 'floor' method.
+	- ex: 
+	var totalSeconds = 391;
+	var minutes = Math.floor(totalSeconds / 60);
+	var seconds = totalSeconds % 60;
+	console.log(totalSeconds + ' is ' + minutes + ' minutes and ' + seconds + ' seconds ');
+
+- Other methods of MATH object:
+	- abs()
+	- floor()
+	- sqrt()
+	- ceil()
+	- pow()
+	- ex:
+
+2) Strings
+- 'Nan'- Not a Number
+- '\' - used in strings to escape character
+	-ex:
+		- '\n'- create new line
+		- '\'' - used for appostrophe
+- None of string methods in JS are destructive. i.e. they will never modify the object they are called on, but will always return a new object instead.
+
+3) Variables
+- 'var'
+- '=' assignment operator
+- Console I/O
+	- 'console.log()' - method used to print text to console and receive input from user, analogous to Ruby's 'puts' and 'prompt()'
+- Combined Assignment Operators
+	- '*=' (ex: num *= 4;)
+	- '+=' (ex: result += 1;)
+
+4) Functions vs. Methods
+- What is a Function?
+	- a chunk of code that does stuff
+	- access to functions is determined by the scope in which they were defined. 
+		-if you define a function in the global scope, it will be available throughout your program.
+		-if you define it within an object or another function, it will only be available from within the context of that object or function.
+-What is a Method?
+	- refer to a function that is defined within the context of an object
+		- ex: 'toUpperCase()' is a method defined by the 'String' object. It will only work when called on a string object.
+
+5) Function Basics
+- Whenever we have an action we want to perform like adding two numbers or parsing a string, we will define that action in a function.
+	1. Name: keyword to identify the function. (Should be concise and descriptive of the action performed.)
+	2. Parameters: input values for the function which are treated as local variables within the function body.
+	3. Body: the code to be executed when the function is called.
+		- ex: 
+			var foo = function(bar) { bar + 'baz';};
+
+			var NAME = function(PARAMETER, PARAMETER) {BODY;};
+
+-Invoking a Function
+	-invoking function in JS is similar to Ruby except parentheses are REQUIRED even if the functions does not take any parameters
+
+- Return Values
+	- take arguments as input and produce output.
+	- output of a function is called it's RETURN VALUE
+	- in JS, no implicit return. Returning a value from a function requires using the 'return' keyword explicitly. 
+		- ex. 
+			var sayHello = function() {return 'hello';};
+
+			var add = function(x,y) { return x + y;} ;
+
+			var add = function(num1, num2) {
+				var sum = num1 + num2;
+				return sum;
+			};
+			add(5,9);
+
+- Parameters
+	- also called ARGUMENTS
+	- list of values that will be available to use within the function body
+	- each paramenter is actually a local variable that is only availabe within the body of the function
+	-concept of where a variable is defined and where it is available to use is referred to as the variable's SCOPE
+	 - EX:
+	 	var doSomething = function(firstName, num, age) {
+	 		return "You entered name: " + firstName + ", num: " + num + ", age: " + age;
+	 		};
+
+	 	doSomething("Alex, 42, 12");
+
+	 	var firstname = "Ken";
+	 	var num = 15;
+	 	doSomething(firstName, num, 21);
+	 	
+	 	-Arguments can be either an object (like 'Alex' and 42) or variables (like 'firstName' and 'num' )
+	 	-Arguments are matched on position only
+	 		-EX: doSomething(firstName, 33, num);
+	 			-third argument 'num' gets passed to the parameter 'age' because it is in the third position.
+
+6) Built-In Methods (for CORE JS)
+- INSTANCE METHODS - methods called on instances of objects
+	-general sytax to call an instance method:
+
+		someObject.methodName(argument list);
+
+-Method Chaining
+	- allows you to call more than one method to an object.
+		-ex: 'concat()' and 'toUpperCase()' a String object
+	- can't do this seperately because JS are non-destructive. Way to get around it is by assigning another variable.
+		-ex:
+			var myString = "i like programming";
+			myString.concat(" and sushi.").toUpperCase();
+
+-Syntactic Sugar
+	-precise formatting: 
+		- ';' semicolons at the ends of statements
+		- '()' parens for holding arguments and invoking functions, etc
+	-preserves the usual order of operations when using the 'syntactic sugar' way of writing operations (ie. multiplication before addition, etc.)
+
+7) Conditions and Logic
+	-SEQUENTIAL PROGRAMMING- programming structure (or program flow). Statements written to execute in the order they appear in the program (or method).
+	-SELECTION STRUCTURE or 'BRANCHING'- execute programs based on some changed or addtional value added. 
+
+-Conditional Statments
+	- a statment that can be evaluated to 'true' or 'false'.
+	- COMPARISON OPERATORS: < , > , <= , >= , === , !=
+
+-Logical Operators
+	- used to combine together conditional statments to create more complex conditional statements
+	- Logical Operators:
+		- && = AND
+		- || = OR
+		-  ! = NOT (Changes the truth valuse of any conditional statment.)
+		- RULES:
+			- true && true   = True
+			- true && false  = False
+			- false && true  = False
+			- false && false = False
+
+			- true || true   = True
+			- true || false  = True
+			- false || true  = True
+			- false || false = False
+
+-Boolean Methods
+	- you have to write out conditional statements in JS instead of using handy methods
+
+-Truthiness and Falsiness
+	-conditional statements can be formed without making an explicit statment
+	-allows us to convert objects to a boolean value to be used in a conditional
+
+	-Objects that evaluate to 'true':
+		-Any 'Number' besides 0
+		-Any 'String' with a length greater than zero
+		-Any defined object
+		-The Boolean object true
+	-Objects that evaluate to 'false':
+		-Undefined
+		-Null
+		-The 'Number' objects 0 and 'NaN'
+		-An empty 'String' ('' or "" - length is zero)
+		-Teh 'Boolean' object 'false'
+
+	-Ex: 
+		if ("hello") { console.log("It's alive!")}
+
+		var num = 5;
+		if (num) { console.log("five")}
+
+		var foo;
+		if (foo) { "foo is an undefined variable."}
+
+		if (4-3) { "not zero!"}
+		if (4-4) { "you shouldn't see me."}
+
+		if (! null) { "NOT NULL!"}
+
+		if (true) { "The Truth"}
+
+8) If Statements
+- if statements are the basic branching structure in JS
+- JS does not have an 'unless' statment
+	-if you want to use the opposite of an if statement, use the '!' modifier:
+		-Ex: if (! condition) {code}
+
+-If/Else If
+	-Allows one to branch into more than just one option
+		-Ex: 
+			if (average >= 90) {
+				var grade = "A";
+			} else if (average >= 80) {
+				var grade = "B";
+			} else {
+				var grade = "F";
+			}
+	-'Else' must always be last
+			
+9) Array Basics
+
+-Creating Arrays
+	-Ex: var powersOfTen = [1,10,100]
+		- 'powersOfTen' is a variable
+		- '1' is first element, '10' second element, etc.
+-Reading from Arrays
+	-Can split up arrays across multiple lines in JS as long as the line ends with a comma
+	-JS follws the same 0-based indexing as Ruby and most other programming languages
+	-The index can be a variable that holds an integer too
+		months[1];
+		months[11];
+
+		var monthNumber = 5;
+		months[monthNumber];
+
+-Changing Arrays
+	-JS lets you change the values in an array too
+	-Ex:
+		var array = [1,2,3];
+		console.log('array[2] is ' + array[2])
+		array[2] = "apples";
+		console.log('array[2] is now ' + array[2]);
+
+10) Array Operations
+- Every Array object in JS supports the same set of methods and properties, doesn't matter what type of objects are in the array. 
+- This of array methods as ways of asking an array questions or giving it commads.
+- List of some of the common Array methods, properties, and idioms in Js:
+
+	- Array.first() and Array.last()
+		- there are no Array.first() and Array.last() in Js.
+		- use index notation
+		- Ex:
+			[1,2,3][0] 
+				=> 1
+
+			var animals = ["cats", "dogs"];
+			animals[0];
+				=> "cats"
+
+			[true, "cats", 100][0]
+				=> true
+		- To figure out the last item in an array in Js looks like this:
+			
+			var numbers = [1,2,3];
+			numbers[numbers.length -1];
+				=> 3
+
+			var animals = ["cats"];
+			animals[animals.length -1];
+				=> "cats"
+
+			var mixed = [true, "cats", 100];
+			mixed[mixed.length -1];
+				=> 100
+
+	-Array.length
+		- 'length' is a property in Js. In Ruby, it is a method.
+			-TIP: You can tell it's a property in Js because it doens't take a () at the end
+			-Ex:
+				[].length;		=> 0
+				[1].length; 	=> 1
+				[1,2].length; 	=> 2
+				[1,2,3].length; => 3
+
+	-Array.length === 0
+		-To figure out if an array is empty?
+		-In Js, need to use a conditional statement that checks if the length is 0 or not
+		- Ex:
+			[].length === 0 		=> true
+			["cats"].length === 0 	=> false
+			[null].length === 0 	=> false
+			[false].length === 0 	=> false
+
+			var array = [1,2,3];
+			array.length === 0;		=> false
+
+	-Array.indexOf(object) > -1
+		- Accessor Method: 'indexOf()'
+			- takes an object as its input and returns the index of that object in the array
+				- returns -1 if the object is not in the array.
+			- 'indexOf(object) > -1' will return 'true' if 'object' is in the array, false otherwise.
+					
+					[1,2,3].indexOf(1) > -1; 		=> true
+					[1,2,3].indexOf("cats") > -1;	=> false
+
+					var foo = "pants";
+					[1,2,3,foo].indexOf("pants") > -1;	=> true
+
+					var desserts = ["pie", "cake", "scone"];
+					desserts.indexOf("steak") > -1;		=> false
+
+	-Array.join() and String.split()
+		-Array.join()
+			[1,2,3].join(",");			=> "1,2,3"
+			[1,2,3].join("+");			=> "1+2+3"
+			[2012, 12, 31].join('-')	=> "2-010-12-31"
+
+			var foo = false;
+			[foo, 'bar', 10, '20'].join('---');
+					=> "false---bar---10---20"
+
+			[1,2,3].join();				=> "1,2,3"
+
+		-Array.split(',');	
+			- returns an array of strings, not an array of intergers
+
+				"1,2,3".split(',');			=> ["1", "2", "3"]
+				"1 + 2 + 3".split(' + ');	=> ["1", "2", "3"]
+				"2012-12-31".split('-');	=> ["2012", "12", "31"]
+				"foobar".split('');			=> ["f", "o", "o", "b", "a", "r"]
+
+	-Array.push() and Array.pop()
+		-Array.push()
+			-pushes a new element to the end of an array, and retruns the new (longer) array. 
+			-It modifies the underlying array
+
+			var array = [1,2,3];
+			array.push("cats");
+			array
+				=> [1,2,3, "cats"]
+
+			var array = [];
+			array.push(true);
+			array
+				=> [true]
+
+		-Array.pop()
+			-pops (removes) the last element from the end of the array. 
+			-It also modifies the state of the source object ("modifier method")
+
+			var array = [1,2,3];
+			var lastElement = array.pop();
+			array;
+				=> [1,2]
+			lastElement;
+				=> 3
+
+	-Array.unshift() and Array.shift()
+		-same as Array.push() and Array.pop(), except this does the first element (vs. last element) in an array
+
+		-Array.unshift()
+			-adds an element to the beginning of an array
+
+				var array = [1,2,3];
+				array.unshift("cats");
+				array;
+					=> ["cats", 1, 2, 3]
+
+				var array = [];
+				array.unshift(true)
+				array;
+					=> [true]
+
+		-Array.shift()
+			-removes the first element from the array and returns a modified array.
+
+				var array = [1,2,3];
+				var firstElement = array.shift();
+				array;
+						=> [2,3]
+				firstElement;
+						=> 1
+
+	-Concatenating Arrays
+		- add arrays together to form 1 large array
+
+			var array1 = [1,2,3];
+			var array2 = ['cats', 'dogs'];
+			var arraySum = array1.concat(array2);
+			arraySum;
+					=> [1, 2, 3, "cats", "dogs"]
+
+		- Use 'concat()' when you want to combine arrays
+		- Use '+' when you want to combine strings
+
+11) Object Literals
+	- No HASH like Ruby in Js. Use OBJECT LITERALS to achieve a similar functionality
+
+	-Creating Object Literals
+
+		var person = { firstName: 'Frank', lastName: 'Hardy', age: 25};
+		typeof person;		=> "object"
+
+	-Reading from Objects
+		- 'firstName', 'lastName', and 'age' are PROPERTIES of the object in Js. (In Ruby, they are referred to as keys)
+
+		var person = {
+			firstName: 'Frank',
+			lastName: 'Hardy',
+			age: 25, 
+			telephone: '555-555-1234',
+			email: 'fhardy@example.com'
+		};
+
+		-"Give me the 'firstName' property of 'person'"
+
+			person.firstName;		=> "Frank"
+
+	-Changing an Object
+		-Changing the property of an object is the same as changing the value of a variable, except we have to prefix the property with the object's name
+
+			person.firstName = "Billy";
+			console.log('Full name: ' + person.firstName + ' ' + person.lastName);
+
+		-to add properties that don't already exist
+
+			var book = {};
+			book.title;
+					=> undefined
+
+			book.title = "JavaScript for N00bs";
+			book.title;
+					=> "JavaScript for N00bs";
+
+		-allowed to extend objects with new properties whenever needed.
+		-if we try to access a property that has not been defined yet, it will retrun 'undefined'
+
+12) Looping Basics
+	- Uses two keywords for all looping iterations: 'for' and 'while'
+
+	-Reviewing Loops
+		1. Loops that perform a certain action a set number of times
+		2. Loops that perform a certain action until a specified condition is met
+
+		-While Loops
+			-Loops until a condition is met
+
+			var n = 1;
+
+			while (n <= 5) {
+				console.log("n is equal to " + n);
+				n = n + 1;
+			}
+
+			-Always provide an exit startegy for your loops (no Infinite Loops)
+
+		-For Loops
+			- useful for looping with a given number of iterations; use for doing something 'x' times
+			
+			for (var i = 0; i < n; i++) {
+				(BLOCK OF CODE)
+			}
+				1. 'for' tells Js this is a loop and to look for parameters that governs how the loop will operate
+
+				2. Within the parens (), Js expects three instructions to set up loop
+					i. var i = 0 	-assigns the starting value for our incrementor, in this case represented by 'i'. Incrementor is used to keep track of how many loops have been executed
+					ii. i < n 		-conditional statement executed before each iteration in the loop. If statement evaluates 'true', the next ieteration is run. If 'false', the loop will stop.
+					iii. i++		-identifies the action to be taken at the end of each loop. In this case, we are incrementing the value i by 1 each time.
+				3. Within the curly braces {} is the code we want to run with each iteration
+
+13) Looping Through Arrays
+
+	var dogs = ["husky", "great dane", "labrador retriever", "chihuahua", "terrier"];
+
+	for (var i = 0; i < dogs.length; i++) {
+		console.log(dogs[i]);
+	}
+
+	-Code inside a block ({like this}) can see variables defined outside itself, which means we can use variables to determine what to print.
+
+	-It's all in the .length
+		-Sorting Example (sort an array of integers into two arrays: odds and evens):
+
+		(First set up the source and destination arrays)
+		
+		var integers 	= [3,8,1,6,2,0,5,7];
+		var odds		= [];
+		var evens		= [];
+
+		(Then define the loop)
+
+		for (var n = 0; n < integers.length; n++) {
+			if (integers[n] % 2 === 0) {
+				evens.push(intergers[n]);
+			} else {
+				odds.push(intergers[n]);
+			}
+		}
+
+		(Try it out)
+
+		console.log(integers);
+		console.log(odds);
+		console.log(evens);
+
+	-for... in...
+		-Another way to write 'for' loops in Js
+
+			for (x in y) - where 'x' is a variable representing an incremental value and 'y' represents an object with a 'length' property (array)
+
+			Ex: 
+				var nums = [6,0,1,9,3];
+
+				for (i in nums) {
+					console.log(i);
+				}
+
+					- 'i' variable still acts as an incrementor just like (for (var i=0; i<n; i++)) 
+					-'for...in' is different- it will iterate through the elements of an enumerable object in an arbitrary order. Do not use 'for...in' if you are concerned with maintaining the sequential order of your array.
+
+14) Each, Map, Select, Max: "How would we reproduce Ruby-like looping methods in Js?"
+
+	-Each 
+
+		var each = function(array, func) {
+			for (var i=0; i < array.length; i++) {
+				func(array[i]);
+			}
+		};
+
+			-The 'each()' function takes 2 arguments: an array and a function
+			-'each()' then iterates through every element in the array and passes it to the function 'func'
+			- CALLBACK FUNCTION: a function called as an argument from another function. 
+				-parameter 'func' stands in for a function which will be called with the argument 'array[i]'
+
+		Ex:
+
+			var bugs = ["beetle", "spider", "yellow jacket", "firefly"];
+
+			(Execute the each() function, passing it a callback function)
+
+			each(bugs, function(x) {console.log(x)})
+
+	-Map
+		-Ruby's 'Array#map' method will pass each element in an array to a block, and then return a new array of the modified elements. In Js:
+
+		var map = function(array, func) {
+			var results = [];
+
+			for (var i=0; i < array.length; i++){
+				results.push(func(array[i]));
+			}
+
+			return results;
+		};
+
+		Ex:
+			var nums = [5,12,2,81,30];
+
+			(Function to use:)
+			var timesTwo = function(x) { return x * 2 };
+
+			var numsTimesTwo = map(nums, timesTwo);
+			numsTimesTwo; 
+					=> [10, 24, 4, 162, 60]
+
+		-Note use of the 'return' keyword in the argument function. If left out, every function call in the loop will return 'undefined', giving us an array of 'undefined' elements.
+
+	-Select
+		-'Select' is similar to 'Map' except that we use the callback function to provide a truthy or falsey value for the conditional statement.
+
+		var select = function(array, func) {
+			var results = [];
+
+			for (var i=0; i < array.length; i++) {
+				if (func(array[i])) {
+					results.push(array[i]);
+				}
+			}
+
+			return results;
+		}
+
+		Ex:
+
+			var schools = ["Berkeley", "Notre Dame", "Chicago", "Stanford", "Tulane"];
+
+			var numbers = [4,10,39,105,73,20,15];
+
+				ANSWER: 
+
+				var numbers = [4,10,39,105,73,20,15];
+				
+				var multOfFive = function(x) { return x % 5 ===0 }
+				
+				var newlist = select(numbers, multOfFive);
+
+				newlist;
+
+						=> [10, 105, 20, 15]
+
+			var grid =[	[0,1,0,0],
+						[1,0,1],
+						[1,1,0,0,1],
+						[0,1],
+						[1,0,0,0]];
+
+	-Max
+		-Returns the largest number
+		-Simplest of the four
+		-No need to pass a callback function
+
+		var max = function(array) {
+			var biggest = array[0];
+
+			for (var i=0; i < array.length; i++){
+				if(array[i] > biggest) {
+					biggest = array[i];
+				}
+			}
+
+			return biggest;
+		};
+
+
+
+
+
+
+
+				
+					
+
+
