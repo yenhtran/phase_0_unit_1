@@ -22,7 +22,7 @@ Javascript Notes
 - '\' - used in strings to escape character
 	-ex:
 		- '\n'- create new line
-		- '\'' - used for appostrophe
+		- '\'' - used for apostrophe
 - None of string methods in JS are destructive. i.e. they will never modify the object they are called on, but will always return a new object instead.
 
 3) Variables
@@ -76,7 +76,7 @@ Javascript Notes
 	- also called ARGUMENTS
 	- list of values that will be available to use within the function body
 	- each paramenter is actually a local variable that is only availabe within the body of the function
-	-concept of where a variable is defined and where it is available to use is referred to as the variable's SCOPE
+	-concept of where a variable is defined and where it is available to use is referred to as the variable'
 	 - EX:
 	 	var doSomething = function(firstName, num, age) {
 	 		return "You entered name: " + firstName + ", num: " + num + ", age: " + age;

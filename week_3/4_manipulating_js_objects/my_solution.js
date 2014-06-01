@@ -16,20 +16,52 @@ var terah = {
 
 // __________________________________________
 // Write your code below.
+ 
 
+var adam = {
+  name: "Adam",
+ }
 
+var terah = {
+  spouse: adam,
+  age: 32,
+  height: 66,
+  weight: 125,
+  hairColor: "brown",
+}
 
+adam.spouse = terah
 
+terah.children = {
+    carson: {name: "Carson"},
+    carter: {name: "Carter"},
+    colton: {name: "Colton"}
+    }
 
-
+adam.children = terah.children
 
 
 // __________________________________________
 // Reflection: Use the reflection guidelines
 // 
+//This was harder than I thought it was going to be. There
+//were multiple times when I was ready to throw 'terah' and 
+//my computer out the window in frustration after spending 
+//an hour trying to pass the test. 
+//
+//My strategy would be run test, read the report, if I couldn't
+//get it, scroll the entire test looking for clues. The biggest 
+//hurdles was understanding the nested properties when we hadn't 
+//even learned them in the Js labs. The 'spouse' test was also confusing.
+//I had to Google nested properties to figure out the program. 
+//The rest I felt was sheer luck through trial/error.
 // 
-// 
-// 
+//The part of the challenge of this I enjoyed was when I completed 
+//the exercise and all the test passed. What parts I felt annoyed 
+//by was the exercise required understanding part of Js that wasn't
+//covered in the labs that we needed to solve the challenge (nested 
+//properties). I finally broke the rules and Googled it.
+//
 // 
 // 
 
