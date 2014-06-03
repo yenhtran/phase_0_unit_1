@@ -6,9 +6,9 @@
 // the castle. He needs to steal a horse in the stable 
 // across the field. However, in order to get the horse
 // to go with him, he needs to pick up the apple that is
-// located in the middle of the field. Then give the apple
-// to the horse.
-//
+// located in the middle of the field. Then persuades the 
+// horse with the apple to ride the horse. Tharin then rides
+// off.
 // 
 // 
 
@@ -22,7 +22,6 @@
 // Say "Here horsey- I have a treat for you!"
 // Give apple to horse
 // While distracted, get on horse
-// Ride away
 // 
 // 
 // 
@@ -45,23 +44,57 @@ this.rideaway();
 
 // Refactored Code
 
-var moveUp = function() {
-	[INSERT CODE BLOCK]
+var knight = {
+	move = function(direction) {
+		[INSERT CODE];
+	}
+	say: function(sentence) {
+		console.log("Here horsey- I have a treat for you!");
+	}
+	pickApple: function() {
+		[INSERT CODE];
+	}
+	giveApple: function() {
+		[INSERT CODE];
+	}
+	showApple: function() {
+		[INSERT CODE];
+	}
+	getonHorse: function() {
+		[INSERT CODE];
+	}
 }
 
-var moveRight = function() {
-	[INSERT CODE BLOCK]
+var horse = {
+	rideaway: function() {
+		[INSERT CODE];
+	}
 }
 
-var 
+knight.move('up');
+knight.move('up');
+knight.move('right');
+knight.pickApple();
+knight.move('right');
+knight.move('right');
+knight.move('up');
+knight.showApple();
+knight.say("Here horsey- I have a treat for you!");
+knight.giveApple();
+knight.getonHorse();
+horse.rideaway();
 
 
 
 
 
 // Reflection
-// 
-// 
+// This challenge was difficult for me and I believe it's because
+// I don't understand Js still. I definitely need go buy the buy 
+// and work on some Js exercises to. I know my code probably doesn't
+// work, so I feel this was too big of a learning leap for me. What I
+// enjoyed about this game was designing the game, which further 
+// makes me want to look into UX design as a possible career goal.
 // 
 // 
 // 
